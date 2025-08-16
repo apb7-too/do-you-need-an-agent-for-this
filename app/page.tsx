@@ -65,7 +65,7 @@ export default function HomePage() {
           {/* Header */}
           <div className="text-center space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
-              Do you really need an AI Agent?
+              Do you really need an Agent?
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
               Paste your problem below and we'll tell you whether it actually needs an AI agent, or if there's a simpler
@@ -112,7 +112,7 @@ export default function HomePage() {
               >
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-3">
-                    <div className="text-2xl">{result.needsAI ? "✅" : "⚡"}</div>
+                    {/* Removed emoji icons from results display */}
                     <div className="flex-1">
                       <h3
                         className={`text-xl font-semibold mb-2 ${
@@ -121,6 +121,13 @@ export default function HomePage() {
                       >
                         {result.title}
                       </h3>
+                      <h4
+                        className={`text-sm font-medium mb-1 ${
+                          result.needsAI ? "text-green-600 dark:text-green-400" : "text-yellow-600 dark:text-yellow-400"
+                        }`}
+                      >
+                        Why?
+                      </h4>
                       <p
                         className={`mb-4 ${
                           result.needsAI ? "text-green-700 dark:text-green-300" : "text-yellow-700 dark:text-yellow-300"
